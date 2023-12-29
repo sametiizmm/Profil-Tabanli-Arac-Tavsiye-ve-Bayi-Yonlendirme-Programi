@@ -37,10 +37,10 @@ int girisDenetimi() {
 
         // Kullanicinin girisi scanf ile alinir
         if (scanf("%d", &result) == 1) {
-            break; // Gecerli bir giris yapildiysa döngüden cikilir
+            break; // Gecerli bir giris yapildiysa donguden cikilir
         } else {
             // Hatali giris durumunda kullanici uyarilir ve hatali giris temizlenir
-            printf("Hatali giriþ! Lütfen geçerli bir tam sayi giriniz.\n");
+            printf("Hatali giris! Lutfen gecerli bir tam sayi giriniz.\n");
             while (getchar() != '\n'); // Hatali girisi temizle
         }
     }
@@ -50,7 +50,7 @@ int girisDenetimi() {
 
 // Kullanici profili girisini saglayan fonksiyon
 void kullaniciProfiliGiris(struct KullaniciProfil *profil) {
-    // Kullanýcidan cesitli bilgiler alinir
+    // Kullanicidan cesitli bilgiler alinir
     printf("Adiniz: ");
     scanf("%s", profil->ad);
 
@@ -72,7 +72,7 @@ void kullaniciProfiliGiris(struct KullaniciProfil *profil) {
 
     // Gecerli bir giris yapildigini kontrol et
     if (!(profil->surucuYasi > 0 && profil->ehliyetYili > 0 && profil->guvenlikOnem >= 1 && profil->guvenlikOnem <= 10)) {
-        printf("Hatali giriþ! Lütfen geçerli deðerler giriniz.\n");
+        printf("Hatali giris! Lutfen gecerli degerler giriniz.\n");
         kullaniciProfiliGiris(profil); // Hatali giris durumunda tekrar giris yapilmasini iste
     }
 }
@@ -81,16 +81,16 @@ void kullaniciProfiliGiris(struct KullaniciProfil *profil) {
 void kullaniciBilgileriniYazdir(struct KullaniciProfil *profil, struct tm *tm) {
     printf("\nKullanici Bilgileri:\n");
     printf("Ad: %s\n", profil->ad);
-    printf("Doðum Yýlý: %d\n", profil->yil);
-    printf("Sürücü Yaþý: %d\n", profil->surucuYasi);
+    printf("Dogum Yili: %d\n", profil->yil);
+    printf("Surucu Yasi: %d\n", profil->surucuYasi);
 
     int surucuTecrubeYili = tm->tm_year + 1900 - profil->ehliyetYili;
-    printf("Ehliyet Alma Yýlý: %d\n", profil->ehliyetYili);
-    printf("Sürücü Tecrübesi: %d\n", surucuTecrubeYili);
-    printf("Guvenlik Önemi: %d\n", profil->guvenlikOnem);
+    printf("Ehliyet Alma Yili: %d\n", profil->ehliyetYili);
+    printf("Surucu Tecrubesi: %d\n", surucuTecrubeYili);
+    printf("Guvenlik onemi: %d\n", profil->guvenlikOnem);
 }
 
-// Arac önerilerini gösteren fonksiyon
+// Arac onerilerini gosteren fonksiyon
 void aracOnerileriGoster(struct AracBilgisi *aracListesi, int aracSayisi) {
     printf("\nOnerilen Araclar:\n");
     for (int i = 0; i < aracSayisi; ++i) {
@@ -104,9 +104,9 @@ void aracOnerileriGoster(struct AracBilgisi *aracListesi, int aracSayisi) {
     }
 }
 
-// Satis ofislerini gösteren fonksiyon
+// Satis ofislerini gÃ¶steren fonksiyon
 void satisOfisleriGoster(struct Bayiler *satisOfisleri, int ofisSayisi) {
-    printf("\nIlgi Satýþ Ofisleri:\n");
+    printf("\nIlgi Satis Ofisleri:\n");
     for (int i = 0; i < ofisSayisi; ++i) {
         printf("%d. Ofis:\n", i + 1);
         printf("Bayi Adi: %s\n", satisOfisleri[i].bayiAdi);
@@ -143,20 +143,20 @@ int main() {
     int surucuTecrubeYili = tm.tm_year + 1900 - kullanici.ehliyetYili;
 
     if (surucuTecrubeYili <= 3) {
-        printf("\nSiz yeni bir sürücüsünüz. Ýlk aracinizi secerken dikkatli olun!\n");
+        printf("\nSiz yeni bir surucusunuz. ilk aracinizi secerken dikkatli olun!\n");
         aracOnerileriGoster(araclar1, aracSayisi1);
     } else if (surucuTecrubeYili >= 4) {
-        printf("\nSiz deneyimli bir sürücüsünüz. Ýstediðiniz araci seçebilirsiniz.\n");
+        printf("\nSiz deneyimli bir surucusunuz. istediginiz araci secebilirsiniz.\n");
         aracOnerileriGoster(araclar1, aracSayisi1);
         aracOnerileriGoster(araclar2, aracSayisi2);
     }
 
     struct Bayiler satisOfisleri[] = {
-        {"Borusan Oto", "Adres: Poligon Mah. Sarýyer Cad. No. 77 Sarýyer Ýstanbul"},
-        {"Ford Bayisi", "Adres: Örnek Mah. Örnek Cad. No. 2 Örnek Ýstanbul"},
-        {"Honda Satýþ Ofisi", "Adres: Örnek Mah. Örnek Cad. No. 3 Örnek Ýstanbul"},
-        {"Mercedes-Benz Sarýyer Bayisi", "Adres: Sarýyer Mah. Mercedes Cad. No. 10 Sarýyer Ýstanbul"},
-        // ... Daha fazla satýs ofisi eklenebilir
+        {"Borusan Oto", "Adres: Poligon Mah. Sariyer Cad. No. 77 Sariyer istanbul"},
+        {"Ford Bayisi", "Adres: Ornek Mah. Ornek Cad. No. 2 Ornek istanbul"},
+        {"Honda Satis Ofisi", "Adres: Ornek Mah. Ornek Cad. No. 3 Ornek istanbul"},
+        {"Mercedes-Benz Sariyer Bayisi", "Adres: Sariyer Mah. Mercedes Cad. No. 10 Sariyer istanbul"},
+        // ... Daha fazla satis ofisi eklenebilir
     };
 
     int ofisSayisi = sizeof(satisOfisleri) / sizeof(satisOfisleri[0]);
@@ -164,4 +164,3 @@ int main() {
 
     return 0;
 }
-
