@@ -1,0 +1,19 @@
+Bu C kodu, bir kullanıcının profil bilgilerini alarak ona uygun araç önerileri sunan ve ardından ilgili satış ofislerini listeleyen bir programdır.
+Programın ana işlevleri şu şekildedir:
+
+Kullanıcı Profil Bilgileri Girişi:
+Kullanıcıdan ad, doğum yılı, ehliyet alma yılı ve güvenlik önemi gibi bilgiler istenir.
+Kullanıcının yaşı ve sürücü tecrübesi hesaplanır.
+
+Kullanıcı Bilgilerini Yazdırma:
+Kullanıcının girdiği bilgiler ve hesaplanan yaş/tecrübe bilgileri ekrana yazdırılır.
+
+Araç Önerileri:
+Kullanıcının sürücü tecrübesine göre uygun araçlar önerilir.
+Eğer kullanıcı yeni bir sürücü ise, daha düşük fiyatlı ve düşük kaza riski olan araçlar önerilir.
+Deneyimli sürücüler için ise daha fazla seçenek sunulur.
+
+Satış Ofislerini Gösterme:
+Kullanıcının ilgilenebileceği satış ofisleri listelenir.
+Program, kullanıcıdan alınan bilgilere dayanarak kişiselleştirilmiş araç önerileri sunar ve bu araçların temin edilebileceği bayilerin bilgilerini gösterir. 
+Bu yapı, basit bir otomobil satış danışmanlığı uygulamasının temel işlevlerini simüle etmektedir.
